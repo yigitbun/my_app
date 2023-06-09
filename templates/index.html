@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Article Summarizer</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <h1>Article Summarizer</h1>
+    <form method="POST">
+      <label for="url">Enter an article URL:</label><br>
+      <input type="text" id="url" name="url"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+    {% if summaries %}
+    <h2>Summaries:</h2>
+    <ul>
+      {% for summary in summaries %}
+      <li>{{ summary }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </body>
+</html>
